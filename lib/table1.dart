@@ -58,16 +58,6 @@ class _TableOneState extends State<TableOne> {
     });
   }
 
-  // onSelectedRow(bool selected, Worker worker) async {
-  //   setState(() {
-  //     if (selected) {
-  //       selectedWorkers.add(worker);
-  //     } else {
-  //       selectedWorkers.remove(worker);
-  //     }
-  //   });
-  // }
-
   decreaseX(int x, String category) {
     //double percent = 0.01;
     if (category == 'A' || category == 'a') {
@@ -168,29 +158,7 @@ class _TableOneState extends State<TableOne> {
     int compareInt(bool ascending, int value1, int value2) =>
         ascending ? value1.compareTo(value2) : value2.compareTo(value1);
 
-    checkVars(var name, var place, var a, var b, var c) {
-      try {
-        String n = name;
-        String p = place;
-        int.parse(a);
-        int.parse(b);
-        int.parse(c);
-      } catch (e) {
-        AlertDialog(
-          scrollable: true,
-          title: Text(
-              'Проверьте, что в поля "Name" и "Place" введены буквы, а в поля A, B, C - цифры'),
-          content: const Padding(padding: EdgeInsets.all(8.0)),
-          actions: [
-            TextButton(
-                child: Text("Submit", style: TextStyle(color: Colors.black)),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                })
-          ],
-        );
-      }
-    }
+
 
     void onSort(int columnIndex, bool ascending) {
       if (columnIndex == 0) {
